@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import './Message.scss';
 
 function Message({ author, text }) {

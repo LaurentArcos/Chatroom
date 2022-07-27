@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { setNewMessageinputText } from '../../../actions/actions';
+import { setNewMessageInputText } from '../../../actions/actions';
 
 function MessageInput() {
   const dispatch = useDispatch();
@@ -9,7 +9,7 @@ function MessageInput() {
     <input
       value={text}
       onChange={(event) => {
-        dispatch(setNewMessageinputText(event.target.value));
+        dispatch(setNewMessageInputText(event.target.value));
       }}
       className="MessageForm__input"
       placeholder="Votre message ici..."
