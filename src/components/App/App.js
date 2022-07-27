@@ -1,10 +1,11 @@
 import MessageForm from '../MessageForm/MessageForm';
-import './styles.scss';
+import MessagesList from '../MessagesList/MessagesList';
+import './App.scss';
 
 function App() {
   return (
-    <div className="app">
-
+    <div className="App">
+      <MessagesList />
       <MessageForm />
     </div>
   );

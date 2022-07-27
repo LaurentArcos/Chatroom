@@ -1,0 +1,31 @@
+.Message {
+  margin-bottom: 20px;
+  width: 70%;
+
+  &__author {
+      margin-bottom: 5px;
+  }
+
+  &__text {
+      padding: 10px;
+      border: 1px solid #eee;
+  }
+}
+
+/*
+SCSS va générer le CSS suivant
+
+.Message {
+  margin-bottom: 20px;
+  width: 70%;
+}
+
+.Message .Message__author {
+  margin-bottom: 5px;
+}
+
+.Message .Message__text {
+  padding: 10px;
+  border: 1px solid #eee;
+}
+*/

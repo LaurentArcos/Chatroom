@@ -1,0 +1,13 @@
+.MessageForm {
+  display: flex;
+
+  &__input {
+      flex: 1;
+      height: 30px;
+      margin-right: 20px;
+  }
+
+  &__submitButton {
+      height: 30px;
+  }
+}

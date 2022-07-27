@@ -51,6 +51,8 @@
   "dependencies": {
     "prop-types": "*",
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "react-redux": "^8.0.2",
+    "redux": "^4.2.0"
   }
 }

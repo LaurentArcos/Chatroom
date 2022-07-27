@@ -1,6 +1,6 @@
 function MessageSubmitButton() {
   return (
-    <button type="button">Envoyer</button>
+    <button className="MessageForm__submitButton" type="button">Envoyer</button>
   );
 }
 

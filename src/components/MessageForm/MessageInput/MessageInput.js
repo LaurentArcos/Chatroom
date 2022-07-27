@@ -1,6 +1,6 @@
 function MessageInput() {
   return (
-    <input placeholder="Votre message ici..." />
+    <input className="MessageForm__input" placeholder="Votre message ici..." />
   );
 }
 
