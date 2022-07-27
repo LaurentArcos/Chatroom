@@ -4,7 +4,12 @@ import './MessageForm.scss';
 
 function MessageForm() {
   return (
-    <form className="MessageForm">
+    <form
+      className="MessageForm"
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
       <MessageInput />
       <MessageSubmitButton />
     </form>

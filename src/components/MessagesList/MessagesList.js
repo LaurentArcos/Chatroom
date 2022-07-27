@@ -1,13 +1,8 @@
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Message from './Message/Message';
 
 function MessagesList() {
-  const [messages, setMessages] = useState([
-    { id: 1, author: 'Pacman', text: 'Waka waka waka waka' },
-    { id: 2, author: 'Shakira', text: 'Waka waka HE HE' },
-    { id: 3, author: 'Koala', text: 'Koala koala' },
-    { id: 4, author: 'Laurent', text: 'Bonjour' },
-  ]);
+  const messages = useSelector((state) => state.messages);
 
   return (
     <div>

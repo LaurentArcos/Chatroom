@@ -1,6 +1,19 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { setNewMessageinputText } from '../../../actions/actions';
+
 function MessageInput() {
+  const dispatch = useDispatch();
+  const text = useSelector((state) => state.newMessageInputText);
+
   return (
-    <input className="MessageForm__input" placeholder="Votre message ici..." />
+    <input
+      value={text}
+      onChange={(event) => {
+        dispatch(setNewMessageinputText(event.target.value));
+      }}
+      className="MessageForm__input"
+      placeholder="Votre message ici..."
+    />
   );
 }
 
