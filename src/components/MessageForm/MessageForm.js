@@ -3,6 +3,7 @@ import MessageInput from './MessageInput/MessageInput';
 import MessageSubmitButton from './MessageSubmitButton/MessageSubmitButton';
 import './MessageForm.scss';
 import { addNewMessage } from '../../actions/actions';
+import MessageAuthorInput from './MessageAuthorInput/MessageAuthorInput';
 
 function MessageForm() {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ function MessageForm() {
       }}
     >
       <MessageInput />
+      <MessageAuthorInput />
       <MessageSubmitButton />
     </form>
   );

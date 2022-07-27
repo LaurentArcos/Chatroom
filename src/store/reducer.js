@@ -1,4 +1,4 @@
-import { ADD_NEW_MESSAGE, SET_NEW_MESSAGE_INPUT_TEXT } from '../actions/actions';
+import { ADD_NEW_MESSAGE, SET_NEW_MESSAGE_INPUT_TEXT, SET_NEW_MESSAGE_AUTHOR } from '../actions/actions';
 
 const initialState = {
   messages: [
@@ -9,6 +9,7 @@ const initialState = {
   ],
 
   newMessageInputText: '',
+  newMessageAuthor: '',
 };
 
 /*
@@ -37,10 +38,11 @@ function reducer(state = initialState, action = {}) {
         ...state,
         messages: [...state.messages, {
           id: newId,
-          author: 'Nouvel auteur',
+          author: state.newMessageAuthor,
           text: state.newMessageInputText,
         }],
         newMessageInputText: '',
+        newMessageAuthor: '',
       };
     }
 
@@ -48,6 +50,12 @@ function reducer(state = initialState, action = {}) {
       return {
         ...state,
         newMessageInputText: action.payload.text,
+      };
+
+    case SET_NEW_MESSAGE_AUTHOR:
+      return {
+        ...state,
+        newMessageAuthor: action.payload.author,
       };
 
     default:
