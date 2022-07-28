@@ -49,6 +49,7 @@
     "webpack-merge": "*"
   },
   "dependencies": {
+    "@babel/runtime": "^7.18.9",
     "prop-types": "*",
     "react": "*",
     "react-dom": "*",
