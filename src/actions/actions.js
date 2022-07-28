@@ -18,3 +18,21 @@ export const ADD_NEW_MESSAGE = 'ADD_NEW_MESSAGE';
 export const addNewMessage = () => ({
   type: ADD_NEW_MESSAGE,
 });
+
+export const OPEN_SETTINGS = 'OPEN_SETTINGS';
+export const openSettings = () => ({
+  type: OPEN_SETTINGS,
+  payload: {
+    openedSettings: true,
+    closedSettings: false,
+  },
+});
+
+export const CLOSE_SETTINGS = 'CLOSE_SETTINGS';
+export const closeSettings = () => ({
+  type: CLOSE_SETTINGS,
+  payload: {
+    openedSettings: false,
+    closedSettings: true,
+  },
+});

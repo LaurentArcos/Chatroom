@@ -1,4 +1,11 @@
-import { ADD_NEW_MESSAGE, SET_NEW_MESSAGE_INPUT_TEXT, SET_NEW_MESSAGE_AUTHOR } from '../actions/actions';
+import {
+  ADD_NEW_MESSAGE,
+  SET_NEW_MESSAGE_INPUT_TEXT,
+  SET_NEW_MESSAGE_AUTHOR,
+  OPEN_SETTINGS,
+  CLOSE_SETTINGS,
+}
+  from '../actions/actions';
 
 const initialState = {
   messages: [
@@ -10,6 +17,9 @@ const initialState = {
 
   newMessageInputText: '',
   newMessageAuthor: '',
+
+  opennedSettings: false,
+  closedSettings: true,
 };
 
 /*
@@ -56,6 +66,20 @@ function reducer(state = initialState, action = {}) {
       return {
         ...state,
         newMessageAuthor: action.payload.author,
+      };
+
+    case OPEN_SETTINGS:
+      return {
+        ...state,
+        openedSettings: action.payload.openedSettings,
+        closedSettings: action.payload.closedSettings,
+      };
+
+    case CLOSE_SETTINGS:
+      return {
+        ...state,
+        openedSettings: action.payload.openedSettings,
+        closedSettings: action.payload.closedSettings,
       };
 
     default:
