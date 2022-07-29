@@ -3,6 +3,7 @@ export const setNewMessageInputText = (text) => ({
   type: SET_NEW_MESSAGE_INPUT_TEXT,
   payload: {
     text,
+    // Correspond à text: text,
   },
 });
 
@@ -19,16 +20,23 @@ export const addNewMessage = () => ({
   type: ADD_NEW_MESSAGE,
 });
 
-export const OPEN_SETTINGS = 'OPEN_SETTINGS';
-export const openSettings = () => ({
-  type: OPEN_SETTINGS,
-  payload: {
-    openedSettings: true,
-    closedSettings: false,
-  },
-});
-
 export const TOGGLE_SETTINGS = 'TOGGLE_SETTINGS';
 export const toggleSettings = () => ({
   type: TOGGLE_SETTINGS,
+});
+
+export const SET_NEW_MAIL_LOGIN = 'SET_NEW_MAIL_LOGIN';
+export const setNewMailLogin = (email) => ({
+  type: SET_NEW_MAIL_LOGIN,
+  payload: {
+    email,
+  },
+});
+
+export const SET_NEW_PASSWORD_LOGIN = 'SET_NEW_PASSWORD_LOGIN';
+export const setNewPasswordLogin = (password) => ({
+  type: SET_NEW_PASSWORD_LOGIN,
+  payload: {
+    password,
+  },
 });

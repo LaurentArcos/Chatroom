@@ -1,12 +1,16 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleSettings } from 'src/actions/actions';
+import {
+  toggleSettings,
+  setNewMailLogin,
+  setNewPasswordLogin,
+} from 'src/actions/actions';
 
 import './Settings.scss';
 // == Composant
 function Settings() {
   // Même chose:
   // const showSettings = useSelector((state) => state.showSettings);
-  const { showSettings } = useSelector((state) => state);
+  const { showSettings, newEmailLogin, newPasswordLogin } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   return (
@@ -20,8 +24,8 @@ function Settings() {
       </button>
       {showSettings && (
         <form>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Mot de passe" />
+          <input type="email" value={newEmailLogin} placeholder="Email" onChange={(event) => dispatch(setNewMailLogin(event.target.value))} />
+          <input type="password" value={newPasswordLogin} placeholder="Mot de passe" onChange={(event) => dispatch(setNewPasswordLogin(event.target.value))} />
           <button type="submit">Envoyer</button>
         </form>
       )}

@@ -3,6 +3,8 @@ import {
   SET_NEW_MESSAGE_INPUT_TEXT,
   SET_NEW_MESSAGE_AUTHOR,
   TOGGLE_SETTINGS,
+  SET_NEW_PASSWORD_LOGIN,
+  SET_NEW_MAIL_LOGIN,
 }
   from '../actions/actions';
 
@@ -17,6 +19,8 @@ const initialState = {
   newMessageInputText: '',
   newMessageAuthor: '',
   showSettings: false,
+  newEmailLogin: '',
+  newPasswordLogin: '',
 };
 
 /*
@@ -69,6 +73,18 @@ function reducer(state = initialState, action = {}) {
       return {
         ...state,
         showSettings: !state.showSettings,
+      };
+
+    case SET_NEW_MAIL_LOGIN:
+      return {
+        ...state,
+        newEmailLogin: action.payload.email,
+      };
+
+    case SET_NEW_PASSWORD_LOGIN:
+      return {
+        ...state,
+        newPasswordLogin: action.payload.password,
       };
 
     default:
