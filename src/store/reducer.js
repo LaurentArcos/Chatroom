@@ -3,10 +3,8 @@ import {
   SET_NEW_MESSAGE_INPUT_TEXT,
   SET_NEW_MESSAGE_AUTHOR,
   TOGGLE_SETTINGS,
-  SET_NEW_PASSWORD_LOGIN,
-  SET_NEW_MAIL_LOGIN,
-}
-  from '../actions/actions';
+  SET_SETTINGS_LOGIN_FORM,
+} from '../actions/actions';
 
 const initialState = {
   messages: [
@@ -75,16 +73,17 @@ function reducer(state = initialState, action = {}) {
         showSettings: !state.showSettings,
       };
 
-    case SET_NEW_MAIL_LOGIN:
+    case SET_SETTINGS_LOGIN_FORM:
+      // Notre field est dynamique et basé sur le nom de la propriété de state
+      // Donc dire :
+      // field: value
+      // correspond potentiellement à :
+      // newEmailLogin: value
+      // newPasswordLogin: value
+      // On pourrait également faire les set de l'auteur et du msg ici !
       return {
         ...state,
-        newEmailLogin: action.payload.email,
-      };
-
-    case SET_NEW_PASSWORD_LOGIN:
-      return {
-        ...state,
-        newPasswordLogin: action.payload.password,
+        [action.payload.field]: action.payload.value,
       };
 
     default:

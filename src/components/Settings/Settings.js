@@ -1,9 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  toggleSettings,
-  setNewMailLogin,
-  setNewPasswordLogin,
-} from 'src/actions/actions';
+import { useState } from 'react';
+import { toggleSettings, setSettingsLoginForm } from 'src/actions/actions';
 
 import './Settings.scss';
 // == Composant
@@ -12,6 +9,8 @@ function Settings() {
   // const showSettings = useSelector((state) => state.showSettings);
   const { showSettings, newEmailLogin, newPasswordLogin } = useSelector((state) => state);
   const dispatch = useDispatch();
+
+  const [isPasswordHidden, setIsPasswordHidden] = useState(true);
 
   return (
     <div className="Settings">
@@ -24,8 +23,30 @@ function Settings() {
       </button>
       {showSettings && (
         <form>
-          <input type="email" value={newEmailLogin} placeholder="Email" onChange={(event) => dispatch(setNewMailLogin(event.target.value))} />
-          <input type="password" value={newPasswordLogin} placeholder="Mot de passe" onChange={(event) => dispatch(setNewPasswordLogin(event.target.value))} />
+          <input
+            type="email"
+            value={newEmailLogin}
+            placeholder="Email"
+            onChange={(event) => dispatch(setSettingsLoginForm('newEmailLogin', event.target.value))}
+          />
+
+          <input
+            type={isPasswordHidden ? 'password' : 'text'}
+            value={newPasswordLogin}
+            placeholder="Mot de passe"
+            onChange={(event) => dispatch(setSettingsLoginForm('newPasswordLogin', event.target.value))}
+          />
+
+          <button
+            type="button"
+            onClick={() => setIsPasswordHidden(!isPasswordHidden)}
+          >
+            {
+              // (isPasswordHidden && 'Afficher') || (!isPasswordHidden && 'Masquer')
+            }
+            {isPasswordHidden ? 'Afficher' : 'Masquer'} le MDP
+          </button>
+
           <button type="submit">Envoyer</button>
         </form>
       )}
@@ -35,3 +56,4 @@ function Settings() {
 
 // == Export
 export default Settings;
+

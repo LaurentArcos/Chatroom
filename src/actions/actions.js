@@ -25,18 +25,11 @@ export const toggleSettings = () => ({
   type: TOGGLE_SETTINGS,
 });
 
-export const SET_NEW_MAIL_LOGIN = 'SET_NEW_MAIL_LOGIN';
-export const setNewMailLogin = (email) => ({
-  type: SET_NEW_MAIL_LOGIN,
+export const SET_SETTINGS_LOGIN_FORM = 'SET_SETTINGS_LOGIN_FORM';
+export const setSettingsLoginForm = (field, value) => ({
+  type: SET_SETTINGS_LOGIN_FORM,
   payload: {
-    email,
-  },
-});
-
-export const SET_NEW_PASSWORD_LOGIN = 'SET_NEW_PASSWORD_LOGIN';
-export const setNewPasswordLogin = (password) => ({
-  type: SET_NEW_PASSWORD_LOGIN,
-  payload: {
-    password,
-  },
+    field,
+    value,
+},
 });
