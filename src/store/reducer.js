@@ -4,6 +4,7 @@ import {
   SET_NEW_MESSAGE_AUTHOR,
   TOGGLE_SETTINGS,
   SET_SETTINGS_LOGIN_FORM,
+  SEND_LOGIN
 } from '../actions/actions';
 
 const initialState = {
@@ -84,6 +85,13 @@ function reducer(state = initialState, action = {}) {
       return {
         ...state,
         [action.payload.field]: action.payload.value,
+      };
+
+    case SEND_LOGIN:
+      return {
+        ...state,
+        newEmailLogin: '',
+        newPasswordLogin: '',
       };
 
     default:

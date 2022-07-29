@@ -1,8 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
-import axios from 'axios';
 
-import { toggleSettings, setSettingsLoginForm } from 'src/actions/actions';
+import { toggleSettings, setSettingsLoginForm, sendLogin } from 'src/actions/actions';
 import './Settings.scss';
 // == Composant
 function Settings() {
@@ -17,17 +16,7 @@ function Settings() {
     event.preventDefault();
     console.log('Je veux me connecter');
 
-    axios.post('http://localhost:3001/login',
-      {
-        email: newEmailLogin,
-        password: newPasswordLogin,
-      })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    dispatch(sendLogin());
   };
 
   return (
