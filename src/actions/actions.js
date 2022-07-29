@@ -31,5 +31,10 @@ export const setSettingsLoginForm = (field, value) => ({
   payload: {
     field,
     value,
-},
+  },
+});
+
+export const SEND_LOGIN = 'SEND_LOGIN';
+export const sendLogin = () => ({
+  type: SEND_LOGIN,
 });

@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { toggleSettings, setSettingsLoginForm } from 'src/actions/actions';
+import axios from 'axios';
 
+import { toggleSettings, setSettingsLoginForm } from 'src/actions/actions';
 import './Settings.scss';
 // == Composant
 function Settings() {
@@ -11,6 +12,23 @@ function Settings() {
   const dispatch = useDispatch();
 
   const [isPasswordHidden, setIsPasswordHidden] = useState(true);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Je veux me connecter');
+
+    axios.post('http://localhost:3001/login',
+      {
+        email: newEmailLogin,
+        password: newPasswordLogin,
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="Settings">
@@ -22,7 +40,7 @@ function Settings() {
         X
       </button>
       {showSettings && (
-        <form>
+        <form onSubmit={handleSubmit}>
           <input
             type="email"
             value={newEmailLogin}
@@ -56,4 +74,3 @@ function Settings() {
 
 // == Export
 export default Settings;
-

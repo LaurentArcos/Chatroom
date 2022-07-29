@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9",
+    "axios": "^0.27.2",
     "prop-types": "*",
     "react": "*",
     "react-dom": "*",
