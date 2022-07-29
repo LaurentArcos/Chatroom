@@ -28,11 +28,7 @@ export const openSettings = () => ({
   },
 });
 
-export const CLOSE_SETTINGS = 'CLOSE_SETTINGS';
-export const closeSettings = () => ({
-  type: CLOSE_SETTINGS,
-  payload: {
-    openedSettings: false,
-    closedSettings: true,
-  },
+export const TOGGLE_SETTINGS = 'TOGGLE_SETTINGS';
+export const toggleSettings = () => ({
+  type: TOGGLE_SETTINGS,
 });

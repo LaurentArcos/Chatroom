@@ -2,8 +2,7 @@ import {
   ADD_NEW_MESSAGE,
   SET_NEW_MESSAGE_INPUT_TEXT,
   SET_NEW_MESSAGE_AUTHOR,
-  OPEN_SETTINGS,
-  CLOSE_SETTINGS,
+  TOGGLE_SETTINGS,
 }
   from '../actions/actions';
 
@@ -17,9 +16,7 @@ const initialState = {
 
   newMessageInputText: '',
   newMessageAuthor: '',
-
-  opennedSettings: false,
-  closedSettings: true,
+  showSettings: false,
 };
 
 /*
@@ -68,18 +65,10 @@ function reducer(state = initialState, action = {}) {
         newMessageAuthor: action.payload.author,
       };
 
-    case OPEN_SETTINGS:
+    case TOGGLE_SETTINGS:
       return {
         ...state,
-        openedSettings: action.payload.openedSettings,
-        closedSettings: action.payload.closedSettings,
-      };
-
-    case CLOSE_SETTINGS:
-      return {
-        ...state,
-        openedSettings: action.payload.openedSettings,
-        closedSettings: action.payload.closedSettings,
+        showSettings: !state.showSettings,
       };
 
     default:
