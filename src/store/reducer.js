@@ -4,7 +4,7 @@ import {
   SET_NEW_MESSAGE_AUTHOR,
   TOGGLE_SETTINGS,
   SET_SETTINGS_LOGIN_FORM,
-  SEND_LOGIN
+  SEND_LOGIN,
 } from '../actions/actions';
 
 const initialState = {

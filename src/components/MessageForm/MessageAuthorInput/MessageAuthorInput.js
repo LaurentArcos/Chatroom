@@ -8,9 +8,7 @@ function MessageAuthorInput() {
   return (
     <input
       value={newMessageAuthor}
-      onChange={(event) => {
-        dispatch(setNewMessageAuthor(event.target.value));
-      }}
+      disabled
       placeholder="Auteur"
       className="MessageForm__input"
     />
