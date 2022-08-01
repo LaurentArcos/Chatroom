@@ -3,7 +3,7 @@ import { setNewMessageAuthor } from 'src/actions/actions';
 
 function MessageAuthorInput() {
   const dispatch = useDispatch();
-  const newMessageAuthor = useSelector((state) => state.newMessageAuthor);
+  const newMessageAuthor = useSelector((state) => state.auth.username);
 
   return (
     <input

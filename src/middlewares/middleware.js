@@ -27,14 +27,16 @@ export const debugMiddleware = (store) => (next) => (action) => {
 export const loginMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case SEND_LOGIN:
-      const state = store.getState();
-      const { newEmailLogin, newPasswordLogin } = state;
+      const state = store.getState().loginForm;
+      const { email, password } = state;
 
-      axios.post('http://localhost:3001/login',
+      axios.post(
+        'http://localhost:3001/login',
         {
-          email: newEmailLogin,
-          password: newPasswordLogin,
-        })
+          email,
+          password,
+        },
+      )
         .then((response) => {
           console.log(response.data);
 

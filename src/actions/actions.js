@@ -15,8 +15,11 @@ export const setNewMessageAuthor = (author) => ({
 });
 
 export const ADD_NEW_MESSAGE = 'ADD_NEW_MESSAGE';
-export const addNewMessage = () => ({
+export const addNewMessage = (username) => ({
   type: ADD_NEW_MESSAGE,
+  payload: {
+    username,
+  },
 });
 
 export const TOGGLE_SETTINGS = 'TOGGLE_SETTINGS';

@@ -7,7 +7,7 @@ import './Settings.scss';
 function Settings() {
   // Même chose:
   // const showSettings = useSelector((state) => state.showSettings);
-  const { showSettings, newEmailLogin, newPasswordLogin } = useSelector((state) => state);
+  const { show, email, password } = useSelector((state) => state.loginForm);
   const dispatch = useDispatch();
 
   const [isPasswordHidden, setIsPasswordHidden] = useState(true);
@@ -28,20 +28,20 @@ function Settings() {
       >
         X
       </button>
-      {showSettings && (
+      {show && (
         <form onSubmit={handleSubmit}>
           <input
             type="email"
-            value={newEmailLogin}
+            value={email}
             placeholder="Email"
-            onChange={(event) => dispatch(setSettingsLoginForm('newEmailLogin', event.target.value))}
+            onChange={(event) => dispatch(setSettingsLoginForm('email', event.target.value))}
           />
 
           <input
             type={isPasswordHidden ? 'password' : 'text'}
-            value={newPasswordLogin}
+            value={password}
             placeholder="Mot de passe"
-            onChange={(event) => dispatch(setSettingsLoginForm('newPasswordLogin', event.target.value))}
+            onChange={(event) => dispatch(setSettingsLoginForm('password', event.target.value))}
           />
 
           <button

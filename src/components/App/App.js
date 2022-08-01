@@ -5,7 +5,7 @@ import Settings from '../Settings/Settings';
 import './App.scss';
 
 function App() {
-  const author = useSelector((state) => state.newMessageAuthor);
+  const author = useSelector((state) => state.auth.username);
   return (
     <div className="App">
       <Settings />

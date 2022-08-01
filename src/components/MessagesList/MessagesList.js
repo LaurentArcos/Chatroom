@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import Message from './Message/Message';
 
 function MessagesList() {
-  const messages = useSelector((state) => state.messages);
+  const messages = useSelector((state) => state.messages.messages);
 
   return (
     <div>

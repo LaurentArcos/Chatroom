@@ -3,7 +3,7 @@ import { setNewMessageInputText } from '../../../actions/actions';
 
 function MessageInput() {
   const dispatch = useDispatch();
-  const text = useSelector((state) => state.newMessageInputText);
+  const text = useSelector((state) => state.messages.newMessageInputText);
 
   return (
     <input
