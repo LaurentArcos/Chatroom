@@ -52,7 +52,6 @@ function reducer(state = initialState, action = {}) {
           text: state.newMessageInputText,
         }],
         newMessageInputText: '',
-        newMessageAuthor: '',
       };
     }
 
