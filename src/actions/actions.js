@@ -14,11 +14,18 @@ export const setNewMessageAuthor = (author) => ({
   },
 });
 
+export const SEND_MESSAGE = 'SEND_MESSAGE';
+export const sendMessage = () => ({
+  type: SEND_MESSAGE,
+});
+
 export const ADD_NEW_MESSAGE = 'ADD_NEW_MESSAGE';
-export const addNewMessage = (username) => ({
+export const addNewMessage = (message) => ({
   type: ADD_NEW_MESSAGE,
   payload: {
-    username,
+    id: message.id,
+    author: message.author,
+    text: message.text,
   },
 });
 
